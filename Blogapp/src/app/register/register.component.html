@@ -1,0 +1,26 @@
+<div class="container" style="padding-top:40px;">  
+    <div class="row">  
+      <div class="col-md-6 mx-auto">  
+        <div class="card mx-4">  
+          <div class="card-body p-4">  
+            <form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()">  
+              <h1 style="text-align:center">Register</h1>  
+              <label>Username:</label> <br> 
+              <div class="input-group mb-3">  
+               
+                <input type="text" class="form-control" placeholder="Username"  formControlName="username">  
+              </div>  
+              <label>Password:</label> <br> 
+              <div class="input-group mb-3">  
+                <input type="password" class="form-control" placeholder="Password"  formControlName="password">  
+              </div>  
+              <span *ngIf="massage" style="color: green;">Registration successful</span><br>
+              <button type="submit" class="btn btn-block btn-success">Register</button>  
+              <button [routerLink]="['/login']" type="button" class="btn btn-link px-0">click here to login</button>  
+              
+            </form>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </div>  

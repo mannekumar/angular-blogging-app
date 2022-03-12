@@ -1,0 +1,49 @@
+<h3 style="text-align: center;">Micro Blogging Application</h3>
+<p style="float: right;">logged in user:<span style="color: blue;">{{loggedin}}</span></p><br><br><br>
+<button  class="btn btn-primary px-4" style="float: right;" (click)="logout()">logout</button>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"  crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+<div class="container" style="padding-top:60px;">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card-group">
+                <div class="card p-4">
+                    <div class="card-body">
+                        <form name="form" (ngSubmit)="add_blog()">
+                            <h1 style="text-align:center">Add new Blog</h1>
+                            <label>Title:</label> <br>
+                            <div class="input-group mb-4">
+                                <input type="text" name="title" [(ngModel)]="model.title" class="form-control"
+                                    placeholder="Title"><br>
+                                </div>
+                                <label>Description</label> <br>
+                                <div class="input-group mb-4">
+                                    <textarea type="textarea" name="description" [(ngModel)]="model.description"
+                                        class="form-control" placeholder="Description"></textarea>
+                                </div>
+                            
+                                <div>
+                                    <p style="color:#E92626;font-size:20px;font-weight:normal" Class="success"
+                                        align="left">
+                                        {{errorMessage}}
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="submit" class="btn btn-primary px-4"> Add</button>
+                                    </div>
+                                    <span *ngIf="massage" style="color: green;">New blog added successfully</span><br>
+                                    <div class="col-6">
+                                    <button onclick="history.back()" type="submit" class="btn btn-primary px-4"> Go back</button>
+                                </div>
+                                </div>
+                           
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

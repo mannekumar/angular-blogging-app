@@ -1,0 +1,111 @@
+<h3 style="text-align: center;">Micro Blogging Application</h3>
+<p style="float: right;">logged in user:<span style="color: blue;">{{loggedin}}</span></p><br><br><br>
+<button  class="btn btn-primary px-4" style="float: right;" (click)="logout()">logout</button>
+
+<div class="col-12">
+  <input  [routerLink]="['/add']" style="align-content: center;float: right;margin-right: 10px;" type ='button'  value='Add new blog' class="btn btn-primary px-4"> 
+</div>
+&nbsp;
+<br>
+<div class="container">
+
+  
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="container">
+        <div class="row" >
+          <div class="col-sm-4 mb-2" *ngFor="let product of blogsOfCategory ">
+            <div class="item">
+              <div class=" mb-r">
+                <div class="card card-cascade wider">
+                  
+                    <div class="view overlay hm-white-slight">
+                      <img src="assets/blog.jpg" class="img-fluid" alt="" width="360px" height="640px">
+                    
+                    </div>
+                
+                  <div class="card-body text-center no-padding">
+                    <p>
+                    <span>Title:</span>
+                    <span>
+                      {{ product.title }}
+                    </span></p>
+                    <p> <span>Created by:</span>
+                      <span>
+                        {{ product.created_by }}
+                      </span>
+                    </p>
+                    <p>
+                    <span>Description:</span>
+                    <a (click)="openPopup(product.description)" class="card-text">see more...
+                    </a>
+                  </p>
+                    <div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Description</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{dynamic_desc}}</p>
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" 
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <button
+  style="margin: 50px; padding: 10px"
+  type="button"
+  (click)="openPopup()">Show Data
+</button>
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Description</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{product.description}}</p>
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" 
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
